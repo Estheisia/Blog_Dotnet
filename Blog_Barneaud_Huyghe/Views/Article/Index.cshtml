@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Blog_Barneaud_Huyghe.Models.Article>
+
+<div>
+    <h1>Liste des articles :</h1>
+    <a asp-action="Create">Créer un article</a>
+</div>
+<div>
+    @if (Model.Count() > 0)
+    {
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>IndividuId</th>
+                <th>Titre</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.IndividuId</td>
+                    <td>@item.Titre</td>
+                    <td>
+                        <a asp-route-Id="@item.Id" asp-action="Details">Détailler</a>
+                        <a asp-route-Id="@item.Id" asp-action="Delete">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>Il n'y a pas d'articles.</p>
+    }
+</div>

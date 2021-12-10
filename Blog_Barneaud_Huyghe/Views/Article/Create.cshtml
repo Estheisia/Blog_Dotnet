@@ -1,0 +1,45 @@
+﻿@model Blog_Barneaud_Huyghe.Models.Article
+
+@{
+    ViewData["Title"] = "Créer";
+}
+
+<h1>Créer un article</h1>
+
+<h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IndividuId" class="control-label"></label>
+                <input asp-for="IndividuId" class="form-control" />
+                <span asp-validation-for="IndividuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Titre" class="control-label"></label>
+                <input asp-for="Titre" class="form-control" />
+                <span asp-validation-for="Titre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contenu" class="control-label"></label>
+                <textarea asp-for="Contenu" class="form-control"></textarea>
+                <span asp-validation-for="Contenu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publication" class="control-label"></label>
+                <input asp-for="Publication" class="form-control" />
+                <span asp-validation-for="Publication" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour aux articles</a>
+</div>
+
