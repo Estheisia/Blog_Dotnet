@@ -58,6 +58,9 @@ namespace Blog_Barneaud_Huyghe.Migrations
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Autorisation")
+                        .HasColumnType("bit");
+
                     b.Property<int>("IndividuId")
                         .HasColumnType("int");
 

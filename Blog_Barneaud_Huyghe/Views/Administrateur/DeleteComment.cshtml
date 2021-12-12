@@ -1,0 +1,15 @@
+﻿@model Blog_Barneaud_Huyghe.Models.Commentaire
+
+
+<div>
+
+    <h3>Supprimer ce commentaire ?</h3>
+    @Html.DisplayFor(model => model.Message)
+
+
+            <form asp-action="DeleteCommentConfirmed">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Oui" />
+            </form>
+</div>
+

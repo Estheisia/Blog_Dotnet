@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Blog_Barneaud_Huyghe.Models.Individu>
+
+<div>
+    <h1>Liste des blogueurs :</h1>
+
+</div>
+<div>
+    @if (Model.Count() > 0)
+    {
+        <table class="table">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Identifiant)</th>
+                <th>@Html.DisplayNameFor(model => model.EstBloggeur)</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Identifiant</td>
+                    <td>@item.EstBloggeur</td>
+                    <td>
+                        <a asp-route-Id="@item.IndividuId" asp-action="ReverseAutorisation">Inverser l'autorisation</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>Il n'y a pas de blogueurs.</p>
+    }
+</div>

@@ -24,5 +24,7 @@ namespace Blog_Barneaud_Huyghe.Models
         [Required]
         [DataType(DataType.Date)]
         public DateTime Publication { get; set; }
+
+        public bool Autorisation { get; set; }
     }
 }

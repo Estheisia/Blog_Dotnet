@@ -1,0 +1,15 @@
+﻿@model Blog_Barneaud_Huyghe.Models.Individu
+
+<div>
+
+    <h3>Inverser l'autorisation du blogueur ?</h3>
+    @Html.DisplayFor(model => model.IndividuId)
+    @Html.DisplayFor(model => model.Identifiant)
+
+
+    <form asp-action="ReverseAutorisationConfirmed">
+        <input type="hidden" asp-for="IndividuId" />
+        <input type="submit" value="Supprimer" />
+    </form>
+</div>
+

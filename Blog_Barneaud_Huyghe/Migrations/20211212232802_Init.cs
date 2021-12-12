@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Blog_Barneaud_Huyghe.Migrations
 {
-    public partial class ntm : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -53,7 +53,8 @@ namespace Blog_Barneaud_Huyghe.Migrations
                     ArticleId = table.Column<int>(type: "int", nullable: false),
                     IndividuId = table.Column<int>(type: "int", nullable: false),
                     Message = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Publication = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Publication = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Autorisation = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

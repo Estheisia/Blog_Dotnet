@@ -430,3 +430,10 @@ C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\ne
 C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Article\Create.cshtml.g.cs
 C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Article\Details.cshtml.g.cs
 C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Article\Delete.cshtml.g.cs
+C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Administrateur\Articles.cshtml.g.cs
+C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Administrateur\Blogueurs.cshtml.g.cs
+C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Administrateur\Commentaires.cshtml.g.cs
+C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Administrateur\DeleteComment.cshtml.g.cs
+C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Administrateur\Details.cshtml.g.cs
+C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Administrateur\Index.cshtml.g.cs
+C:\Users\Moi\source\repos\Blog_Barneaud_Huyghe\Blog_Barneaud_Huyghe\obj\Debug\net5.0\Razor\Views\Administrateur\ReverseAutorisation.cshtml.g.cs

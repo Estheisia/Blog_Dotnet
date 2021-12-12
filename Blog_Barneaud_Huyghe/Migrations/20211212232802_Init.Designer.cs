@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog_Barneaud_Huyghe.Migrations
 {
     [DbContext(typeof(ArticleDbContext))]
-    [Migration("20211212221550_ntm")]
-    partial class ntm
+    [Migration("20211212232802_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,6 +59,9 @@ namespace Blog_Barneaud_Huyghe.Migrations
 
                     b.Property<int>("ArticleId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Autorisation")
+                        .HasColumnType("bit");
 
                     b.Property<int>("IndividuId")
                         .HasColumnType("int");
