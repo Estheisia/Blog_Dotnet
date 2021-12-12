@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog_Barneaud_Huyghe.Migrations
 {
     [DbContext(typeof(ArticleDbContext))]
-    [Migration("20211210001755_addArticleToDatabase")]
-    partial class addArticleToDatabase
+    [Migration("20211212211135_Antm")]
+    partial class Antm
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,9 +40,12 @@ namespace Blog_Barneaud_Huyghe.Migrations
 
                     b.Property<string>("Titre")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IndividuId");
 
                     b.ToTable("Article");
                 });
@@ -62,7 +65,8 @@ namespace Blog_Barneaud_Huyghe.Migrations
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<DateTime>("Publication")
                         .HasColumnType("datetime2");
@@ -74,7 +78,7 @@ namespace Blog_Barneaud_Huyghe.Migrations
 
             modelBuilder.Entity("Blog_Barneaud_Huyghe.Models.Individu", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IndividuId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -84,15 +88,28 @@ namespace Blog_Barneaud_Huyghe.Migrations
 
                     b.Property<string>("Identifiant")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Motdepasse")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IndividuId");
 
                     b.ToTable("Individu");
+                });
+
+            modelBuilder.Entity("Blog_Barneaud_Huyghe.Models.Article", b =>
+                {
+                    b.HasOne("Blog_Barneaud_Huyghe.Models.Individu", "ArticleIndividuId")
+                        .WithMany()
+                        .HasForeignKey("IndividuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ArticleIndividuId");
                 });
 #pragma warning restore 612, 618
         }

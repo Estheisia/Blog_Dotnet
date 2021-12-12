@@ -14,6 +14,8 @@ namespace Blog_Barneaud_Huyghe.Models
         [Required]
         public int IndividuId { get; set; }
 
+        public virtual Individu ArticleIndividuId { get; set; }
+
         [Required(AllowEmptyStrings = false)]
         [StringLength(128)]
         [DataType(DataType.Text)]

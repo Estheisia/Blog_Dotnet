@@ -9,7 +9,7 @@ namespace Blog_Barneaud_Huyghe.Models
     public class Individu
     {
         [Key]
-        public int Id { get; set; }
+        public int IndividuId { get; set; }
 
         [Required(AllowEmptyStrings = false)]
         [StringLength(128)]

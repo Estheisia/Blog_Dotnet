@@ -9,17 +9,16 @@
     {
         <table class="table">
             <tr>
-                <th>Id</th>
-                <th>IndividuId</th>
-                <th>Titre</th>
-                <th></th>
+                <th>@Html.DisplayNameFor(model => model.Id)</th>
+                <th>@Html.DisplayNameFor(model => model.ArticleIndividuId.Identifiant)</th>
+                <th>@Html.DisplayNameFor(model => model.Titre)</th>
             </tr>
 
             @foreach (var item in Model)
             {
                 <tr>
                     <td>@item.Id</td>
-                    <td>@item.IndividuId</td>
+                    <td>@item.ArticleIndividuId.Identifiant</td>
                     <td>@item.Titre</td>
                     <td>
                         <a asp-route-Id="@item.Id" asp-action="Details">Détailler</a>

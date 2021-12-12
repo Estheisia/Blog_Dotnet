@@ -2,6 +2,7 @@
 using Blog_Barneaud_Huyghe.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,10 @@ namespace Blog_Barneaud_Huyghe.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Article> objList = _db.Article;
-            return View(objList);
+            //IEnumerable<Article> objList = _db.Article;//(from m in _db.Article select m).Distinct().ToList();
+            var liste = from m in _db.Article select m;
+            liste = liste.Include(l => l.ArticleIndividuId);
+            return View(liste.ToList());
         }
 
         //GET - CREATE
