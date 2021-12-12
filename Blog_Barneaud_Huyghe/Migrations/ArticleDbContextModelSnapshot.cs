@@ -71,6 +71,8 @@ namespace Blog_Barneaud_Huyghe.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("IndividuId");
+
                     b.ToTable("Commentaire");
                 });
 
@@ -108,6 +110,17 @@ namespace Blog_Barneaud_Huyghe.Migrations
                         .IsRequired();
 
                     b.Navigation("ArticleIndividuId");
+                });
+
+            modelBuilder.Entity("Blog_Barneaud_Huyghe.Models.Commentaire", b =>
+                {
+                    b.HasOne("Blog_Barneaud_Huyghe.Models.Individu", "CommentaireIndividuId")
+                        .WithMany()
+                        .HasForeignKey("IndividuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CommentaireIndividuId");
                 });
 #pragma warning restore 612, 618
         }

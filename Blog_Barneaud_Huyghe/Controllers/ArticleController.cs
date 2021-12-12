@@ -60,22 +60,9 @@ namespace Blog_Barneaud_Huyghe.Controllers
                 return NotFound();
             }
 
+            ViewData["Commentaire"] = (from m in _db.Commentaire select m).Distinct().ToList();
+            ViewData["Individu"] = (from s in _db.Individu select s).Distinct().ToList();
             return View(obj);
-        }
-
-        //POST - DETAILS
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Details(Article obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _db.Article.Update(obj);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(obj);
-
         }
 
         //GET - DELETE

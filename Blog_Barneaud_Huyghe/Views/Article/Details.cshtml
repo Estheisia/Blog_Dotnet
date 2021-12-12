@@ -11,28 +11,13 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.IndividuId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.IndividuId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ArticleIndividuId.Identifiant)
+            Auteur
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ArticleIndividuId.Identifiant)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Titre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Titre)
+        <dd class="col-sm-12">
+            <h1>@Html.DisplayFor(model => model.Titre)</h1>
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Contenu)
@@ -40,12 +25,27 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Contenu)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Publication)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Publication)
+        <dd class="col-sm-12">
+            Posté le : @Html.DisplayFor(model => model.Publication)
         </dd>
+        <dt class="col-sm-12">
+            Commentaires
+        </dt>
+        @foreach (Commentaire commentaire in ViewData["Commentaire"] as IEnumerable<Commentaire>)
+        {
+            @if (commentaire.ArticleId == Model.Id)
+            {
+                foreach (Individu ind in ViewData["Individu"] as IEnumerable<Individu>)
+                {
+                    @if (ind.IndividuId == commentaire.IndividuId)
+                    {
+                        <dd class="col-sm-12">
+                            @ind.Identifiant a posté "@commentaire.Message".Ajouté le @commentaire.Publication
+                        </dd>
+                    }
+                }
+            }
+        }
     </dl>
 </div>
 <div>
