@@ -1,2 +1,2 @@
-# Blog_Barneaud_Huyghe
- Un Blog en Dotnet MVC
+# Blog_Dotnet
+ Un prototype de Blog en Dotnet MVC
